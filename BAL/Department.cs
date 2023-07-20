@@ -38,7 +38,6 @@ namespace BAL
             Console.WriteLine("Department created successfully.");
         }
 
-
         public void UpdateDepartment()
         {
             Console.WriteLine("Enter the index of the department to update:");
