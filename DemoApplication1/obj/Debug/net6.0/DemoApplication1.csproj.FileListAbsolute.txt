@@ -1,0 +1,15 @@
+E:\learn\dotnet\project\DemoApplication1\bin\Debug\net6.0\DemoApplication1.exe
+E:\learn\dotnet\project\DemoApplication1\bin\Debug\net6.0\DemoApplication1.deps.json
+E:\learn\dotnet\project\DemoApplication1\bin\Debug\net6.0\DemoApplication1.runtimeconfig.json
+E:\learn\dotnet\project\DemoApplication1\bin\Debug\net6.0\DemoApplication1.dll
+E:\learn\dotnet\project\DemoApplication1\bin\Debug\net6.0\DemoApplication1.pdb
+E:\learn\dotnet\project\DemoApplication1\obj\Debug\net6.0\DemoApplication1.csproj.AssemblyReference.cache
+E:\learn\dotnet\project\DemoApplication1\obj\Debug\net6.0\DemoApplication1.GeneratedMSBuildEditorConfig.editorconfig
+E:\learn\dotnet\project\DemoApplication1\obj\Debug\net6.0\DemoApplication1.AssemblyInfoInputs.cache
+E:\learn\dotnet\project\DemoApplication1\obj\Debug\net6.0\DemoApplication1.AssemblyInfo.cs
+E:\learn\dotnet\project\DemoApplication1\obj\Debug\net6.0\DemoApplication1.csproj.CoreCompileInputs.cache
+E:\learn\dotnet\project\DemoApplication1\obj\Debug\net6.0\DemoApplication1.dll
+E:\learn\dotnet\project\DemoApplication1\obj\Debug\net6.0\refint\DemoApplication1.dll
+E:\learn\dotnet\project\DemoApplication1\obj\Debug\net6.0\DemoApplication1.pdb
+E:\learn\dotnet\project\DemoApplication1\obj\Debug\net6.0\DemoApplication1.genruntimeconfig.cache
+E:\learn\dotnet\project\DemoApplication1\obj\Debug\net6.0\ref\DemoApplication1.dll
