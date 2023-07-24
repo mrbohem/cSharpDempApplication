@@ -37,7 +37,14 @@ namespace BAL
 
             string name = Console.ReadLine();
 
-            employee.create(name);
+            Console.WriteLine("Enter DepartmentId:");
+            int departmentId = 0;
+            int.TryParse(Console.ReadLine(),out departmentId);
+            
+            Console.WriteLine("Enter Designation:");
+            string designation = Console.ReadLine();
+
+            employee.create(name,departmentId,designation);
 
             Console.WriteLine("Employee created successfully.");
         }
@@ -46,8 +53,9 @@ namespace BAL
         public void UpdateEmployee()
         {
             Console.WriteLine("Enter the index of the employee to update:");
-            int id = int.Parse(Console.ReadLine());
-            DAL.DBF.Models.Employee? row = employee.get(id);
+            int id = 0;
+            int.TryParse(Console.ReadLine(),out id);
+            Models.Employee? row = employee.get(id);
             if (row != null)
             {
                 Console.WriteLine("Enter the new name for the Employee:");
@@ -65,7 +73,7 @@ namespace BAL
         {
             Console.WriteLine("Enter the index of the Employee to delete:");
             int id = int.Parse(Console.ReadLine());
-            DAL.DBF.Models.Employee? row = employee.get(id);
+            Models.Employee? row = employee.get(id);
 
             if (row != null)
             {

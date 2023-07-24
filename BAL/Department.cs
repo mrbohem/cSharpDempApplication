@@ -42,7 +42,7 @@ namespace BAL
         {
             Console.WriteLine("Enter the index of the department to update:");
             int id = int.Parse(Console.ReadLine());
-            DAL.DBF.Models.Department? row = department.get(id);
+            Models.Department? row = department.get(id);
             if (row != null)
             {
                 Console.WriteLine("Enter the new name for the department:");
@@ -60,7 +60,7 @@ namespace BAL
         {
             Console.WriteLine("Enter the index of the department to delete:");
             int id = int.Parse(Console.ReadLine());
-            DAL.DBF.Models.Department? row = department.get(id);
+            Models.Department? row = department.get(id);
             
             if (row != null)
             {

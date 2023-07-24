@@ -1,4 +1,5 @@
-﻿using DAL.DBF.Models;
+﻿using Models;
+using DAL.CDF;
 
 namespace DAL
 {
@@ -19,16 +20,22 @@ namespace DAL
             return data;
         }
 
-        public DBF.Models.Employee? get(int id)
+        public Models.Employee? get(int id)
         {
-            return db.Employees.FirstOrDefault(c => c.Id == id);
+            return db.Employees.Select(x => new Models.Employee
+            {
+                Id = x.Id,
+                Name = x.Name,
+                departmentId = x.departmentId,
+                designation = x.designation,
+            }).FirstOrDefault(c => c.Id == id);
         }
 
-        public void create(string name)
+        public void create(string name,int departmentId,string designation)
         {
             try
             {
-                DBF.Models.Employee employee = new DBF.Models.Employee { Name = name };
+                Models.Employee employee = new Models.Employee { Name = name,departmentId=departmentId,designation=designation };
                 db.Employees.Add(employee);
                 db.SaveChanges();
             }
@@ -37,17 +44,16 @@ namespace DAL
                 Console.WriteLine(ex.Message);
             }
         }
-        public void update(DBF.Models.Employee employee, string name)
+        public void update(Models.Employee employee, string name)
         {
             employee.Name = name;
             db.SaveChanges();
         }
 
-        public void delete(DBF.Models.Employee employee)
+        public void delete(Models.Employee employee)
         {
             db.Employees.Remove(employee);
             db.SaveChanges();
         }
-
     }
 }

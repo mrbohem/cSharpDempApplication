@@ -77,3 +77,6 @@ Master.start();
 
 
 // Scaffold-DbContext "Data Source=PS-IN-LT-17059;Initial Catalog=Demo;Integrated Security=True;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DBF/Models
+
+// crud by producer, ADO.net and dapper
+// async and sync framework

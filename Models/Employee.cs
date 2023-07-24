@@ -10,7 +10,7 @@ namespace Models
     {
         public long Id { get; set; }
         public string Name { get; set; }
-        public int department_id { get; set; }
+        public int departmentId { get; set; }
         public string designation { get; set; }
     }
 }

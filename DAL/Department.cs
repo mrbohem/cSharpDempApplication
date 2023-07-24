@@ -1,4 +1,6 @@
-﻿using DAL.DBF.Models;
+﻿//using DAL.DBF.Models;
+//using DAL.CDF;
+using DAL.CDF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using Microsoft.EntityFrameworkCore;
-using DAL.DBF;
+//using DAL.DBF;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DAL
@@ -20,22 +22,30 @@ namespace DAL
         }
         public IEnumerable<Models.Department> get()
         {
-            var data = db.Departments.Select(x => new Models.Department
-            {
-                Id = x.Id,
-                Name = x.Name
-            }).ToList();
+            //var data = db.Departments.Select(x => new Models.Department
+            //{
+            //    Id = x.Id,
+            //    Name = x.Name
+            //}).ToList();
+
+            IEnumerable<Models.Department> data = db.Departments.FromSqlRaw("EXEC getAllDepartments").ToList();
             return data;
         }
 
-        public DBF.Models.Department? get(int id) {
-            return db.Departments.FirstOrDefault(c => c.Id == id);
+        public Models.Department? get(int id) {
+            //Models.Department data = db.Departments.FromSqlRaw("EXEC getDepartmentById @id",id).FirstOrDefault();
+
+            return db.Departments.Select(x => new Models.Department
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).FirstOrDefault(c => c.Id == id);
         }
 
         public void create(string name)
         { 
             try{
-                DBF.Models.Department department = new DBF.Models.Department { Name = name };
+                Models.Department department = new Models.Department { Name = name };
                 db.Departments.Add(department);
                 db.SaveChanges();
             }
@@ -43,12 +53,12 @@ namespace DAL
                 Console.WriteLine(ex.Message);
             }
         }
-        public void update(DBF.Models.Department department,string name) {
+        public void update(Models.Department department,string name) {
             department.Name = name;
             db.SaveChanges();
         }
 
-        public void delete(DBF.Models.Department department) {
+        public void delete(Models.Department department) {
             db.Departments.Remove(department);
             db.SaveChanges();
         }
