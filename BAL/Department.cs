@@ -64,8 +64,11 @@ namespace BAL
             
             if (row != null)
             {
-                department.delete(row);
-                Console.WriteLine("Department deleted successfully.");
+                int affectedRow = department.delete(row);
+                if (affectedRow>0)
+                {
+                    Console.WriteLine("Department deleted successfully.");
+                }
             }
             else
             {
